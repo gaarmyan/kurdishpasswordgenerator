@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پاسۆردی بتەو درووسبکە</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 style="font-family: IBMPlexSansArabic-Bold;">درووستکردنی وشەی نهێنی بەهێز</h1>
+      <p>دروستکردنی وشەی نهێنی بەهێز و پارێزراو بە ئاسانی.</p>
+      <div class="header-buttons">
+        <label class="theme-toggle-switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <div class="card">
+        <div class="password-display">
+          <input type="text" id="password" readonly aria-label="Generated Password">
+          <button id="toggle-visibility" aria-label="Toggle Password Visibility">👁️</button>         
+        </div>
+
+        <div class="password-strength">
+          <span>بەهێزی وشەی نهێنی:</span>
+          <div id="strength-bar">
+            <div id="strength-indicator"></div>
+          </div>
+          <span id="strength-text">لاواز</span>
+          <div id="strength-details"></div>
+        </div>
+        <button id="export-btn" class="generate-btn">داگرتن</button>
+        <button id="generate-btn" class="generate-btn">وشەی نهێنی دروست بکە</button>
+        <button id="copy-btn" class="generate-btn" aria-label="Copy Password to Clipboard">کۆپیکردن</button>
+        
+      </div>
+
+      <div class="card">
+        <div class="settings">
+          <label for="length">درێژی وشەی نهێنی: <span id="length-value">12</span></label>
+          <input type="range" id="length" min="8" max="50" value="12" aria-label="Password Length">
+
+          <div class="row">
+          <label class="toggle-switch">
+            <input type="checkbox" id="uppercase" checked>
+            <span class="slider"></span>
+            پیتی گەورە لەخۆ بگرێت
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="numbers" checked>
+            <span class="slider"></span>
+            ژمارەکان لەخۆ بگرێت
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="symbols" checked>
+            <span class="slider"></span>
+            کارەکتەری تایبەت لەخۆ بگرێت
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="exclude-similar" checked>
+            <span class="slider"></span>
+            پیتە هاوشێوەکان دەربهێنە (بۆ نموونە i, l, 1, L)
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="exclude-sequential">
+            <span class="slider"></span>
+            کاراکتەرە یەک لە دوای یەکەکان دەربهێنە (بۆ نموونە، abc، 123)
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="exclude-repeated">
+            <span class="slider"></span>
+            کاراکتەرە دووبارەبووەکان دەربهێنە (بۆ نموونە، aa، 111)
+          </label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="start-with-letter" checked>
+            <span class="slider"></span>
+            بە پیتێک دەست پێ بکە
+          </label>
+        </div>
+        </div>     
+      </div>
+
+      <div class="card">
+        <div class="saved-passwords">
+          <h2>مێژووی وشەی نهێنی</h2>
+          <ul id="password-history"></ul>
+        </div>
+      </div>
+
+      <div class="copy">
+        <a href="https://garmyanit.blogspot.com/" class="git">Copyright (c) 2024  GaRmYnIt</a>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

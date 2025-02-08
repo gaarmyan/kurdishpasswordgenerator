@@ -1,0 +1,569 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+}
+
+header {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.row {
+  position: relative;
+  right: -19px;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.header-buttons {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#layout-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#layout-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Theme Toggle Switch */
+.theme-toggle-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.theme-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-toggle-switch .slider {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-switch .slider::before {
+  content: '';
+  position: absolute;
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-switch input:checked + .slider {
+  background-color: #007bff;
+}
+
+.theme-toggle-switch input:checked + .slider::before {
+  transform: translateX(25px);
+}
+
+/* Card Styles */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.password-display {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#password {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+#toggle-visibility {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#copy-btn {
+  padding: 12px;
+  width: 32%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-visibility {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+#toggle-visibility:hover {
+  background-color: #5a6268;
+}
+
+#copy-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#copy-btn:hover {
+  background-color: #0056b3;
+}
+
+.password-strength {
+  margin-bottom: 20px;
+}
+
+#strength-bar {
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 5px 0;
+}
+
+#strength-indicator {
+  height: 100%;
+  width: 0;
+  background-color: red;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#strength-text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+#strength-details {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.settings {
+  margin-bottom: 20px;
+}
+
+.settings label {
+  display: flex;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+/* Range Slider Styles */
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch {
+  position: relative;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch .slider {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.toggle-switch .slider::before {
+  content: '';
+  position: absolute;
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #007bff;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(25px);
+}
+
+#generate-btn {
+  width: 33%;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#generate-btn:hover {
+  background-color: #218838;
+}
+
+.saved-passwords {
+  margin-top: 20px;
+}
+
+.saved-passwords h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#export-btn {
+  padding:12px;
+  width: 33%;
+  font-size: 0.9rem;
+  border: none;
+  background-color: #ffc107;
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#export-btn:hover {
+  background-color: #e0a800;
+}
+
+#password-history {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+#password-history li {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+#password-history li button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#password-history li button:hover {
+  background-color: #c82333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f4f4f9;
+}
+
+body.dark-mode .card {
+  background-color: #2d2d2d;
+  color: #f4f4f9;
+}
+
+body.dark-mode #password {
+  background-color: #333;
+  color: #f4f4f9;
+  border-color: #444;
+}
+
+body.dark-mode #toggle-visibility {
+  background-color: #555;
+}
+
+body.dark-mode #copy-btn {
+  background-color: #4dabf7;
+}
+
+body.dark-mode #generate-btn {
+  background-color: #2e8b57;
+}
+
+body.dark-mode #export-btn {
+  background-color: #ffd700;
+}
+
+body.dark-mode #password-history li {
+  background-color: #444;
+  border-color: #555;
+}
+
+body.dark-mode #password-history li button {
+  background-color: #c82333;
+}
+
+body.dark-mode .slider {
+  background-color: #666;
+}
+
+body.dark-mode input:checked + .slider {
+  background-color: #4dabf7;
+}
+
+body.dark-mode input[type="range"]::-webkit-slider-runnable-track {
+  background: #444;
+}
+
+body.dark-mode input[type="range"]::-webkit-slider-thumb {
+  background: #4dabf7;
+}
+
+body.dark-mode input[type="range"]::-moz-range-track {
+  background: #444;
+}
+
+body.dark-mode input[type="range"]::-moz-range-thumb {
+  background: #4dabf7;
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabic-Bold";
+  src: url("font/IBMPlexSansArabic-Bold.ttf");
+}
+*{
+font-family: "IBMPlexSansArabic-Bold";
+}
+
+
+/*other*/
+
+ @font-face {
+  font-family: "SemiBold";
+  src: url("font/SemiBold.ttf");
+}
+
+p{
+  font-family: "SemiBold";
+}
+.copy a{
+  font-size: 11px;
+    color: #889;
+    text-decoration: none;
+    font-family: arial;
+}
+
+
+/* Media Queries for Responsive Design */
+
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.8rem;
+  }
+
+  .header-buttons {
+    top: 10px;
+    right: 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .password-display {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #password {
+    width: 100%;
+  }
+
+  #toggle-visibility, #copy-btn, #generate-btn, #export-btn {
+    width: 100%;
+  }
+
+  .settings label {
+    font-size: 0.8rem;
+  }
+
+  #generate-btn {
+    font-size: 0.9rem;
+    margin: 5px 0px;
+  }
+
+  .saved-passwords h2 {
+    font-size: 1rem;
+  }
+
+  #export-btn, #remove-all-btn {
+   
+  }
+
+  #password-history li {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    max-width: 90%;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .password-display {
+    flex-direction: row;
+  }
+
+  #password {
+    width: auto;
+  }
+
+  #toggle-visibility, #copy-btn {
+    width: auto;
+  }
+}
+
+/* Desktops (901px and above) */
+@media (min-width: 901px) {
+  .container {
+    max-width: 600px;
+  }
+}
